@@ -1,19 +1,44 @@
+:root {
+    --background-color: #f0f0f0;
+    --calculator-bg: #3a4452;
+    --display-bg: #a7af7c;
+    --button-bg: #e0e0e0;
+    --button-text: #333;
+    --operator-bg: #f39c12;
+    --equal-bg: #2ecc71;
+    --highlight-bg: #d0d0d0;
+}
+
+.dark-theme {
+    --background-color: #1e1e1e;
+    --calculator-bg: #2b2b2b;
+    --display-bg: #333;
+    --button-bg: #4a4a4a;
+    --button-text: #f0f0f0;
+    --operator-bg: #e67e22;
+    --equal-bg: #27ae60;
+    --highlight-bg: #666;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: var(--background-color);
     font-family: sans-serif;
     margin: 0;
+    transition: background-color 0.3s;
+    color: var(--button-text);
 }
 
 .calculator {
-    background-color: #3a4452;
+    background-color: var(--calculator-bg);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     width: 320px;
+    position: relative;
 
     .display {
         margin-bottom: 20px;
@@ -24,8 +49,8 @@ body {
             text-align: right;
             border: none;
             border-radius: 5px;
-            background-color: #a7af7c;
-            color: #333;
+            background-color: var(--display-bg);
+            color: var(--button-text);
             box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
         }
     }
@@ -41,40 +66,45 @@ body {
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            background-color: #e0e0e0;
-            color: #333;
+            background-color: var(--button-bg);
+            color: var(--button-text);
             transition: background-color 0.2s;
 
             &:hover {
-                background-color: #d0d0d0;
+                background-color: var(--highlight-bg);
             }
 
             &:active {
-                background-color: #c0c0c0;
+                background-color: var(--highlight-bg);
+                filter: brightness(90%);
             }
 
             &.operator {
-                background-color: #f39c12;
+                background-color: var(--operator-bg);
                 color: white;
 
                 &:hover {
-                    background-color: #e68a00;
+                    background-color: var(--operator-bg);
+                    filter: brightness(95%);
                 }
                  &:active {
-                    background-color: #d97800;
+                    background-color: var(--operator-bg);
+                    filter: brightness(85%);
                 }
             }
 
             &.equal {
-                background-color: #2ecc71;
+                background-color: var(--equal-bg);
                 color: white;
                 grid-column: span 2;
 
                 &:hover {
-                    background-color: #27ae60;
+                    background-color: var(--equal-bg);
+                    filter: brightness(95%);
                 }
                  &:active {
-                    background-color: #1e8449;
+                    background-color: var(--equal-bg);
+                    filter: brightness(85%);
                 }
             }
             &.zero {
@@ -82,4 +112,15 @@ body {
             }
         }
     }
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: var(--button-text);
 }
