@@ -1,0 +1,18 @@
+{
+  "name": "kalkulacka",
+  "version": "1.0.0",
+  "description": "Klasická kalkulačka",
+  "main": "script.js",
+  "scripts": {
+    "sass": "sass style.scss style.css --watch"
+  },
+  "keywords": [
+    "calculator",
+    "kalkulacka"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.77.4"
+  }
+}

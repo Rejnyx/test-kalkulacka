@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Build files
+style.css
+style.css.map
+
+# OS generated files
+.DS_Store
+Thumbs.db
